@@ -6,6 +6,7 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 %   working with learning algorithms.
 
 mu = mean(X);
-sigma = std(X);
-X_norm = (X - mu) ./ sigma;
+X_norm = X .- mu;
+sigma = std(X_norm);
+X_norm = X_norm ./ sigma;
 end
